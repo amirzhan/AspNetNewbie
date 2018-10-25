@@ -1,0 +1,55 @@
+﻿
+@{
+    ViewBag.Title = "Home Page";
+}
+
+
+
+<div>
+    <h2>List of Users</h2>
+    <table>
+        <tr class="mb-2">
+            <th class="p-2">
+                Id
+            </th>
+            <th class="p-2">
+                email
+            </th>
+            <th class="p-2">
+                password
+            </th>
+            <th class="p-2">
+                fullName
+            </th>
+        </tr>
+        @foreach (var u in ViewBag.Users)
+        {
+        <tr class="mb-2">
+            <td class="p-2">
+                @u.Id
+            </td>
+            <td class="p-2">
+                @u.Email
+            </td>
+            <td class="p-2">
+                @u.Password
+            </td>
+            <td class="p-2">
+                @u.FullName
+            </td>
+            <td class="p-2">
+                <a href="/user/updateUser?id=@u.Id">Update User</a>
+            </td>
+            <td class="p-2">
+                <!--<a href="/user/deleteUser?id=@u.Id">Delete User</a>-->
+                <form action="/user/deleteUserEntity" method="post">
+                    <input type="text" name="id" value="@ViewBag.Id" hidden />
+                    <input type="submit" value="delete user" />
+                </form>
+            </td>
+        </tr>
+        }
+
+    </table>
+    <a href="/user/getUser">Create User</a>
+</div>

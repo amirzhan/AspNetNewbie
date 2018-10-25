@@ -1,0 +1,15 @@
+﻿
+@{
+    ViewBag.Title = "UpdateUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>UpdateUser</h2>
+<form action="UpdateUserEntity" method="post">
+    <input type="text" name="id" value="@ViewBag.Id" hidden />
+    <label>Email: </label>
+    <input type="email" name="email">
+    <label>Password: </label>
+    <input type="password" name="password" />
+    <button type="submit" class="btn btn-success">Submit</button>
+</form>

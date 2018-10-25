@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewBag.Title = "DeleteUser";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>DeleteUser</h2>
+
+<form action="deleteUserEntity" method="post">
+    <input type="text" name="id" value="@ViewBag.Id" hidden />
+    <input type="submit" value="delete user"/>
+</form>
